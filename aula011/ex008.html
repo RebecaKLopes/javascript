@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadania</title>
+</head>
+<body>
+    <h1>Descubra se voce é estrangeiro</h1>
+    Onde voce nasceu? <input type="text" id="pais">
+    <input type="button" value="Pesquisar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+        var nacio = window.document.getElementById('pais')
+        var res = String(nacio)
+        if ('nacio == s'){
+           res.innerHtml = `<p>Nascendo em ${pais} Voce é Brasileiro</p>`
+        } else{
+            `<p>Nascendo em ${pais} Voce é estrangeiro</p>`
+        }
+    }
+    </script>
+</body>
+</html>
