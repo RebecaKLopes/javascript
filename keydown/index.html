@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dv1{
+            font-size: 25px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+     <div id="dv1">Para adicionar o evento: clique. <br>
+        para remover o evento= enter. <br>
+        para mover= use as teclas direcionais.
+     </div>
+
+     <script>
+        
+        var px= 0
+        var py= 0
+        var obj
+
+        //função para mover o elemento na pagina.
+        function move(){
+            var obj= document.getElementById("dv1");
+            var tecla= event.keyCode;
+
+            if(tecla == 37){
+                px-=10;
+                obj.style.left= px+"px";
+            } else if(tecla == 38){
+                px-=10;
+                obj.style.top= px+"px";
+            } else if(tecla == 39){
+                px+=10;
+                obj.style.left= px+"px";
+            } else if(tecla == 40){
+                px+= 10;
+                obj.style.top= px+"px";
+            } else if(tecla == 13){
+                alert('Evento Removido');
+                document.removeEventListener("keydown", move);
+            }
+        }
+        //parametro da função iniciar. chama a função keydown e altera as cores
+        function addClique(){
+            document.addEventListener("keydown", move);
+            obj.style.backgroundColor='red';
+            obj.style.color= 'white';
+        }
+        //chama a função iniciar
+        function iniciar(){
+            obj= document.getElementById("dv1");
+            document.addEventListener("click", addClique);
+        }
+        window.addEventListener("load", iniciar)
+    
+    </script>
+</body>
+</html>  
