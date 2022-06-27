@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #dv1{
+            font-size: 25px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+<body>
+    <div id="dv1"></div>
+    <br>
+    <button id="bt1">Inicar</button>
+    <button id="bt2">parar</button>
+
+    <script>
+
+        var tmp;
+
+        function muda(){
+            var obj= document.getElementById("dv1");
+            var r= Math.floor(Math.random()*255);
+            var g= Math.floor(Math.random()*255);
+            var b= Math.floor(Math.random()*255);
+            obj.style.backgroundColor="rgb("+r+", "+g+", "+b+")";
+        }
+
+        function iniciar(){
+            tmp= setInterval(muda, 500);
+        }
+
+        function parar(){
+            clearInterval(tmp);
+        }
+
+        document.getElementById("bt1").addEventListener("click", iniciar);
+        document.getElementById("bt2").addEventListener("click", parar);
+        
+   
+   </script>
+</body>
+</html>
