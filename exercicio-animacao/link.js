@@ -8,12 +8,12 @@ var anima;
 var estado;
 
 function inicia(){
-    vel= 1;
+    vel= 4;
     dx=1;
     dy= 0;
     px= 0;
     py= 0;
-    estado= 1; //1= movendo - 0= parada.
+    estado= 1;
     jog= document.getElementById("jogador");
     jog.addEventListener("click", moverParar);
     document.getElementById("btini").addEventListener("click", mover);
@@ -51,9 +51,9 @@ function game(){
     px+=(dx*vel);
     jog.style.left= px+"px";
 
-    if(px >800){
+    if(px >1400){
         dx= -1;
-    } else if (px < 0){
+    } else if (px < 400){
         dx= 1;
     }
     anima= requestAnimationFrame(game);
