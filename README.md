@@ -1,2 +1,2 @@
 # javascript
-  Exercícios do curso de Javascript
+  Meu progresso no curso de Javascript
